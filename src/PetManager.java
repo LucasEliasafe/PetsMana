@@ -12,4 +12,21 @@ public class PetManager {
         Pet pet = new Pet(name, type);
         this.pets.add(pet);
     }
+
+    public void removePet(String name) {
+        Pet petToRemove = null;
+        for (Pet pet : pets) {
+            if
+        }
+    }
+
+    public void listPets() {
+        if (pets.isEmpty()){
+            System.out.println("No pets found");
+        } else {
+            for (Pet pet : pets) {
+                System.out.println(pet);
+            }
+        }
+    }
 }
