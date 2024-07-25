@@ -1,8 +1,13 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         PetManager petManager = new PetManager();
 
-        petManager.addPet("Rex", "Cachorro");
-        petManager.addPet("Mia", "Gato");
+
+
+        System.out.println("Lista de pets");
+        petManager.listPets();
     }
 }
