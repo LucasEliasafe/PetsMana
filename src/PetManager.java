@@ -16,7 +16,16 @@ public class PetManager {
     public void removePet(String name) {
         Pet petToRemove = null;
         for (Pet pet : pets) {
-            if
+            if (pet.getName().equals(name)) {
+                petToRemove = pet;
+                break;
+            }
+        }
+        if (petToRemove != null) {
+            pets.remove(petToRemove);
+            System.out.println(name + " foi removido.");
+        } else {
+            System.out.println("Pet não encontrado.");
         }
     }
 
