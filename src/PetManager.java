@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PetManager {
-    private List<Pet> pets;
+    private List<Pet> pets, type;
 
     public PetManager() {
         this.pets = new ArrayList<>();
@@ -11,19 +11,21 @@ public class PetManager {
     public void addPet(String name, String type) {
         Pet pet = new Pet(name, type);
         this.pets.add(pet);
+        System.out.println("Pet adicionado com sucesso: "+ pet);
+        System.out.println("Tipo adicionado com sucesso: "+ type);
     }
 
-    public void removePet(String name) {
+    public void removePet(String name, String Type) {
         Pet petToRemove = null;
         for (Pet pet : pets) {
-            if (pet.getName().equals(name)) {
+            if (pet.getName().equalsIgnoreCase(name) && pet.getType().equalsIgnoreCase(Type)) {
                 petToRemove = pet;
                 break;
             }
         }
         if (petToRemove != null) {
             pets.remove(petToRemove);
-            System.out.println(name + " foi removido.");
+            System.out.println(name + " do tipo " + type + "foi removido.");
         } else {
             System.out.println("Pet não encontrado.");
         }
